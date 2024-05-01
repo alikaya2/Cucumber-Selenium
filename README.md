@@ -52,7 +52,12 @@ Locators are defined constants to manage all of the selectors. Selector managing
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[Java-url]: https://www.java.com/tr
+
+[Selenium.dev]: https://img.shields.io/badge/selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white
 [Selenium-url]: https://www.selenium.dev
-[TestNg-url]: https://testng.org
+[Java.com]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white
+[Java-url]: https://www.java.com/tr
+[Cucumber.io]: https://img.shields.io/badge/Cucumber-43B02A?style=for-the-badge&logo=cucumber&logoColor=white
 [Cucumber-url]: https://cucumber.io
+[Testng.org]: https://img.shields.io/badge/TestNG-7.9.0-brightgreen
+[Testng-url]: https://testng.org
