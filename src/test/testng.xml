@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="Test">
+<suite name="All Test Suites">
+     <listeners>
+<!--         <listener class-name="allureListener.AllureListener"/>-->
+         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test verbose="2" preserve-order= "true" name="Test">
+        <!--verbose is log level from zero to four which means from low to high level
+         preserve-order= "true" mean that test scenarios will not execute randomly-->
         <classes>
             <class name="runner.TestRunner">
-                <!-- BU TDD yaklaşımı içindir, burada StepDefinitions.Steps classını bu şekilde çalıştırabiliriz -->
+                <!-- This is for TDD approach. In here StepDefinitions.Steps class can be executed. -->
             </class>
         </classes>
-
-</test>
-
-
+    </test>
 </suite>

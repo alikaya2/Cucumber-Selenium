@@ -7,12 +7,11 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {
                 "pretty",
-                "json:target/cucumber.json",
                 "html:target/cucumber-reports",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         },
         monochrome = true, publish = true,
-        glue = "pages"
+        glue = {"pages" , "driverManager"}
         ,
         features = "src/test/resources/webFeatures"
 )
@@ -23,4 +22,3 @@ public class TestRunner extends AbstractTestNGCucumberTests {
         return super.scenarios();
     }
 }
-

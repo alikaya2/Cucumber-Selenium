@@ -41,24 +41,23 @@ public class Steps extends Driver {
     }
 
     public void clickSignInElement() {
+        Assert.assertTrue(driverMethods.isSelected(HOMEPAGESIGNINBTN), "HomePage Sign In element is not clicked");
         WebElement signInElement = driverMethods.findElementFromKey(HOMEPAGESIGNINBTN);
         driverMethods.scrollToElement(HOMEPAGESIGNINBTN);
         if (signInElement.getText().contains("Sign In")) {
             logger.info(HOMEPAGESIGNINBTN + " element is exist");
         } else {
-
             logger.info(HOMEPAGESIGNINBTN + " element can not found");
         }
         driverMethods.clickToElement(HOMEPAGESIGNINBTN);
         waitByMilliSeconds(5);
-        Assert.assertFalse(driverMethods.isSelected(HOMEPAGESIGNINBTN), "HomePage Sign In element is not clicked");
     }
 
     public void loginWithUser() {
         WebElement element = driverMethods.findElementFromKey(LOGINEMAIL);
-        element.sendKeys("name.sirname35@gmail.com");
+        element.sendKeys("name.sirname36@gmail.com");
         WebElement element2 = driverMethods.findElementFromKey(LOGINPASSWORD);
-        element2.sendKeys("Namesirname35");
+        element2.sendKeys("Namesirname36");
         driverMethods.clickToElement(SIGNINPAGESIGNINBUTTON);
         logger.info("{}" , SIGNINPAGESIGNINBUTTON + "clicked");
         waitByMilliSeconds(3000);
@@ -80,7 +79,7 @@ public class Steps extends Driver {
         }
     }
 
-    // sayfa içinde link olan bir elemete tıklama ve response kodu kontrol etme
+    // Click the element into a page and check the response
     public void httpResponse(By by) throws IOException {
         String url = driverMethods.findElementFromKey(by).getAttribute("a");
         HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
