@@ -15,9 +15,6 @@ import java.net.URL;
 import java.time.Duration;
 public class DriverManager{
     private static WebDriver driver;
-    public DriverManager() {
-        // Constructor
-    }
 
     public static WebDriver getDriver() {
         return driver;
