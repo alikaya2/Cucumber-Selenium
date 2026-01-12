@@ -6,7 +6,7 @@
 
     <groupId>com.website</groupId>
     <artifactId>Cucumber-Selenium</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <name>Cucumber-Selenium</name>
     <description>Test Automation Framework Selenium, Java with TestNG built by Ali Kaya</description>
 
@@ -32,7 +32,7 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <slf4j-api.version>2.0.12</slf4j-api.version>
         <slf4j.version>2.0.7</slf4j.version>
-        <selenium-java.version>4.17.0</selenium-java.version>
+        <selenium-java.version>4.20.0</selenium-java.version>
         <testng.version>7.7.1</testng.version>
         <cucumber-testng.version>7.11.0</cucumber-testng.version>
         <cucumber-java.version>7.11.0</cucumber-java.version>
