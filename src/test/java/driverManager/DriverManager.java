@@ -24,14 +24,18 @@ public class DriverManager{
     private static final EdgeOptions edgeOptions = new EdgeOptions();
     static String browserName = PropertyConfiguration.configuration.getProperty("browserName");
     static Capabilities capabilities;
-    static final String gridURL = "http://localhost:4444/wd/hub";
+    static final String gridURL = "http://selenium-chromium:4444/wd/hub";
 
 
     public static void getRemoteDriver() throws MalformedURLException {
         switch (browserName) {
             case "chrome":
-                capabilities = new ChromeOptions();
-                driver = new RemoteWebDriver(new URL(gridURL), capabilities);
+                chromeOptions.addArguments("--remote-allow-origins=*");
+                chromeOptions.addArguments("--disable-dev-shm-usage");
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-gpu");
+                chromeOptions.addArguments("--headless=new");
+                driver = new RemoteWebDriver(new URL(gridURL), chromeOptions);
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
                 driver.manage().window().maximize();
                 break;

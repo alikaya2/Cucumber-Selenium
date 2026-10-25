@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jenkins_server
+    user: root
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+      - /Users/alikaya/IdeaProjects/Cucumber-Selenium:/cucumber-selenium
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /Users/alikaya/.m2:/root/.m2
+    networks:
+      - test-network
+    depends_on:
+      - selenium-chromium
+
+  selenium-chromium:
+    image: seleniarm/standalone-chromium:latest
+    container_name: selenium-chromium
+    shm_size: 2gb
+    ports:
+      - "4444:4444"
+      - "7900:7900"
+    networks:
+      - test-network
+
+volumes:
+  jenkins_data:
+
+networks:
+  test-network:
+    name: test-network

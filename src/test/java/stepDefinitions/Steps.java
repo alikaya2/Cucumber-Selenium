@@ -65,7 +65,7 @@ public class Steps extends Driver {
         Assert.assertTrue(driverMethods.findElementFromKey(WELCOMETEXTELEMENT).getText().contains("name sirname"), "Excepted name couldn't sign in");
     }
     public void checkSuccessfulLogin() {
-        Assert.assertTrue(driverMethods.getTitle().contains("Home Page"), "Couldn't access Magento websites!");
+        Assert.assertTrue(driverMethods.getTitle().contains("Software Testing Board - A community of Software Testing Professionals"), "Couldn't access Magento websites!");
         logger.info("Accessed Magento site!");
         Assert.assertTrue(driverMethods.isDisplayed(HOMEPAGEMAINIMG), "Couldn't open HomePage!");
     }
